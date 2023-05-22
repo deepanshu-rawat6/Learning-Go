@@ -6,12 +6,12 @@ import "fmt"
 
 func main() {
 	// var is used for variable declaration
-	var conferenceName = "Go Conference"
+	var conferenceName string = "Go Conference"
 
 	// const is used for constant declaration
-	const conferenceTickets = 50
+	const conferenceTickets int = 50
 
-	var remainingTickets = 50
+	var remainingTickets uint = 50
 
 	//Using %T placeholder to identify the type of variable
 	fmt.Printf("conferenceTickets is %T, remainingTickets is %T, conferenceName is %T", conferenceTickets, remainingTickets, conferenceName)
@@ -28,18 +28,47 @@ func main() {
 	fmt.Println("Get your tickets here to attend")
 
 	//asks for the user for their name
-	var userName string
-	var userTickets int
-
-	userName = "Deepanshu"
-	userTickets = 2
-
-	fmt.Printf("User: %v \nBooked: %v tickets\n", userName, userTickets)
 
 	//Basic datatype of Go: Integers(whole numbers) and String(textual data)
 
 	//Other data types of Go: boolean, maps, arrays...
 
 	//Although, Go being statically typed, but still Go has type inference to automatically detect vars based on value assigned to them
+
+	// More on variables: Float point types
+
+	//SyntacticSugar in programming
+
+	//	We can also use this syntax for using variables in Go, but this only works on variables not constant or on defined datatypes like "strings" or "int"
+
+	//  userName := <value>
+
+	var firstName string
+	var lastName string
+	var email string
+	var userTickets uint
+
+	//	Taking std Input
+	// Using pointers
+
+	fmt.Println("Enter your first name:")
+	fmt.Scan(&firstName)
+
+	fmt.Println("Enter your last name:")
+	fmt.Scan(&lastName)
+
+	fmt.Println("Enter your email:")
+	fmt.Scan(&email)
+
+	fmt.Println("Enter number of tickets:")
+	fmt.Scan(&userTickets)
+
+	// Remaining tickets logic
+
+	remainingTickets = remainingTickets - userTickets
+
+	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
+
+	fmt.Printf("%v Tickets remaining for %v\n", remainingTickets, conferenceName)
 
 }
