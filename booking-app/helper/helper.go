@@ -26,7 +26,6 @@ Scope of variables in Go
 * Package : Declared outside all functions
 
 * Global : Declared outside all functions and uppercase first letter(can be used everywhere across all packages)
-
 Variable Scope : Scope is the region of a program, where a defined variable can be accessed
 
 */
