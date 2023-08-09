@@ -1,0 +1,38 @@
+# Channels
+
+Channels are a typed, thread-safe queue. Channels allow different goroutines to communicate with each other.
+
+## Create a channel
+
+Like maps and slices, channels must be created _before use_. They also use the same `make` keyword:
+
+```go
+ch := make(chan int)
+```
+
+## Send data to a channel
+
+```go
+ch <- 69
+```
+
+The `<-` operator is called the _channel operator_. Data flows in the direction of the arrow. This operation will _block_ until another goroutine is ready to receive the value.
+
+## Receive data from a channel
+
+```go
+v := <-ch
+
+```
+This reads and removes a value from the channel and saves it into the variable `v`. This operation will _block_ until there is a value in the channel to be read.
+
+## Blocking and deadlocks
+
+A [deadlock](https://yourbasic.org/golang/detect-deadlock/#:~:text=yourbasic.org%2Fgolang,look%20at%20this%20simple%20example.) is when a group of goroutines are all blocking so none of them can continue. This is a common bug that you need to watch out for in concurrent programming.
+
+Assignment
+
+Run the program. You'll see that it deadlocks and never exits. The `filterOldEmails` function is trying to send on a channel, but no other goroutines are running that can accept the value _from_ the channel.
+
+Fix the deadlock by spawning a goroutine to send the "is old" values.
+
