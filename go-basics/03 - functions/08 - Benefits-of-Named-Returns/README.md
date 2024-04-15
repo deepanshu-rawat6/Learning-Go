@@ -36,3 +36,21 @@ We know the meaning of each return value just by looking at the function signatu
 If there are multiple return statements in a function, you don’t need to write all the return values each time, though you probably should.
 
 When you choose to omit return values, it's called a naked return. Naked returns should only be used in short and simple functions.
+
+## Questions:
+
+### When should naked returns be used?
+
+* For small functions
+* For large functions
+* For complex functions
+
+`For small functions`
+
+### When should named returns be used?
+
+* When there are many values being returned
+* When there are few parameters being returned 
+* When the function is simple
+
+`When there are many values being returned`
