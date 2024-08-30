@@ -4,9 +4,16 @@ import (
 	"fmt"
 )
 
+func tryingNewForLoop(n int) int {
+	for i := range n {
+		fmt.Println(n - i)
+	}
+	return n
+}
+
 func bulkSend(numMessages int) float64 {
 	totalCost := 1.0
-	for i :=0 ; i < numMessages; i++ {
+	for i := 0; i < numMessages; i++ {
 		totalCost += 0.01
 	}
 	return totalCost
@@ -27,4 +34,5 @@ func main() {
 	test(30)
 	test(40)
 	test(50)
+	tryingNewForLoop(10)
 }
